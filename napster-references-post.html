@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is Agentic AI? | Napster References</title>
+  <meta name="description" content="Agentic AI is artificial intelligence that can pursue a goal on its own. Learn what sets it apart from standard AI tools — and why it matters." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      background: #09080f;
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body { min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font-family: inherit; cursor: pointer; background: none; border: none; }
+
+    /* ─── TOKENS ─── */
+    :root {
+      --bg:     #09080f;
+      --bg2:    #13121f;
+      --bg3:    #1a1928;
+      --border: rgba(255,255,255,.08);
+      --b2:     rgba(255,255,255,.12);
+      --white:  #ffffff;
+      --g1:     #a0a0b8;
+      --g2:     #606078;
+      --max:    1280px;
+      --gut:    clamp(24px, 4vw, 64px);
+    }
+
+    /* ─── NAV ─── */
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(14,13,23,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      max-width: var(--max); margin: 0 auto;
+      padding: 0 var(--gut);
+      height: 62px;
+      display: flex; align-items: center; gap: 0;
+    }
+    .nav-logo { display: flex; align-items: center; flex-shrink: 0; margin-right: 40px; }
+    .nav-logo img { height: 28px; }
+    .nav-left {
+      display: flex; align-items: center; gap: 2px;
+      list-style: none; flex: 1;
+    }
+    .nav-left li button {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 14px; font-weight: 500; color: var(--white);
+      padding: 7px 13px; border-radius: 6px;
+      transition: background .15s; line-height: 1;
+    }
+    .nav-left li button:hover { background: rgba(255,255,255,.07); }
+    .nav-left li button img { width: 11px; opacity: .55; }
+    .nav-right {
+      display: flex; align-items: center; gap: 2px;
+      list-style: none; flex-shrink: 0;
+    }
+    .nav-right li button,
+    .nav-right li a {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 13px; font-weight: 600; letter-spacing: .04em;
+      text-transform: uppercase; color: var(--white);
+      padding: 7px 13px; border-radius: 6px;
+      transition: background .15s; line-height: 1;
+    }
+    .nav-right li button:hover,
+    .nav-right li a:hover { background: rgba(255,255,255,.07); }
+    .nav-right li button img { width: 11px; opacity: .55; }
+    .nav-burger { display: none; margin-left: 12px; }
+    .nav-burger img { width: 28px; }
+
+    /* ─── ARTICLE HEADER ─── */
+    .art-header {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px var(--gut) 52px;
+      text-align: center;
+    }
+
+    /* "Napster References" dark chip — exact match to "Napster Blog" pill */
+    .post-chip {
+      display: inline-flex; align-items: center;
+      background: #1e1d2e;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 100px;
+      font-size: 13px; font-weight: 600;
+      color: var(--white);
+      padding: 7px 18px;
+      margin-bottom: 28px;
+      transition: background .15s;
+    }
+    .post-chip:hover { background: #2a2940; }
+
+    .art-date {
+      font-size: 14px; color: var(--g2);
+      margin-bottom: 20px;
+    }
+    .art-header h1 {
+      font-size: clamp(36px, 5.5vw, 68px);
+      font-weight: 800; line-height: 1.04;
+      letter-spacing: -0.035em;
+      margin-bottom: 20px;
+    }
+    .art-subtitle {
+      font-size: 18px; line-height: 1.6; color: var(--g1);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* Divider under header */
+    .art-divider {
+      border: none; border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ─── ARTICLE BODY LAYOUT — single centered column, no sidebar ─── */
+    .art-body-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 var(--gut);
+    }
+
+    /* ─── ARTICLE BODY TEXT ─── */
+    .art-body {
+      padding: 56px 0 80px;
+    }
+
+    .art-body p {
+      font-size: 17px; line-height: 1.78;
+      color: #c2c2d8;
+      margin-bottom: 24px;
+    }
+    .art-body h2 {
+      font-size: 26px; font-weight: 800;
+      letter-spacing: -0.025em; line-height: 1.2;
+      color: var(--white);
+      margin: 52px 0 16px;
+    }
+    .art-body strong { color: var(--white); font-weight: 700; }
+    .art-body em { font-style: italic; color: var(--g1); }
+    .art-body a {
+      color: #c084fc;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: rgba(192,132,252,.4);
+      transition: text-decoration-color .15s;
+    }
+    .art-body a:hover { text-decoration-color: #c084fc; }
+
+    /* Numbered loop steps */
+    .steps {
+      margin: 4px 0 28px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .step {
+      display: grid; grid-template-columns: 52px 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-n {
+      display: flex; align-items: flex-start; justify-content: center;
+      padding: 22px 0;
+      font-size: 11px; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; color: var(--g2);
+      background: var(--bg2);
+      border-right: 1px solid var(--border);
+    }
+    .step-body { padding: 20px 24px; }
+    .step-body strong { display: block; font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .step-body p { font-size: 14px; line-height: 1.65; color: var(--g1); margin-bottom: 0; }
+
+    /* Trait cards */
+    .traits { margin: 4px 0 28px; display: flex; flex-direction: column; gap: 10px; }
+    .trait {
+      padding: 20px 24px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .trait strong { display: block; font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .trait p { font-size: 14px; line-height: 1.65; color: var(--g1); margin-bottom: 0; }
+
+    /* Pull quote */
+    .pullquote {
+      margin: 28px 0 32px;
+      padding: 0 0 0 24px;
+      border-left: 3px solid var(--white);
+    }
+    .pullquote p { font-size: 22px; font-weight: 700; line-height: 1.35; color: var(--white); margin: 0; }
+
+    /* Share bar — full-width pill container matching blog */
+    .share-row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px;
+      padding: 14px 22px;
+      margin-top: 40px;
+      background: #131220;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 100px;
+    }
+    .share-label {
+      font-size: 15px; font-weight: 500;
+      color: var(--white);
+    }
+    .share-btns { display: flex; align-items: center; gap: 8px; }
+    .share-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: #1e1d2e;
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--white);
+      font-size: 14px; font-weight: 700;
+      transition: background .15s, border-color .15s;
+      text-decoration: none;
+    }
+    .share-btn:hover { background: #2a2940; border-color: rgba(255,255,255,.25); }
+
+    /* Sidebar removed — single-column layout */
+
+    /* ─── "ALSO READ" / RELATED POSTS — exact blog module ─── */
+    .related-section {
+      border-top: 1px solid var(--border);
+      padding: 80px var(--gut) 96px;
+    }
+    .related-inner { max-width: var(--max); margin: 0 auto; }
+    .related-label {
+      font-size: 11px; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: #e040c8;
+      margin-bottom: 16px;
+    }
+    .related-heading {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 800; letter-spacing: -0.035em; line-height: 1.0;
+      margin-bottom: 16px;
+    }
+    .related-heading .grad-word {
+      background: linear-gradient(90deg, #e878f0 0%, #ffffff 50%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .related-sub { font-size: 16px; color: var(--g1); margin-bottom: 48px; line-height: 1.6; }
+
+    /* 3-column grid — no images, styled cards */
+    .related-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+    }
+    .rcard {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px 28px;
+      display: flex; flex-direction: column; gap: 14px;
+      position: relative;
+      overflow: hidden;
+      transition: background .15s, border-color .15s, transform .2s;
+    }
+    .rcard::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #e040c8, #7828ff);
+      opacity: 0; transition: opacity .2s;
+    }
+    .rcard:hover { background: #1a1930; border-color: rgba(255,255,255,.16); transform: translateY(-2px); }
+    .rcard:hover::before { opacity: 1; }
+    .rcard-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #e878f0;
+    }
+    .rcard-title {
+      font-size: 20px; font-weight: 700;
+      line-height: 1.25; letter-spacing: -0.02em;
+      color: var(--white);
+      flex: 1;
+    }
+    .rcard-link {
+      font-size: 13px; font-weight: 600;
+      color: var(--g1);
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 4px; transition: color .15s;
+    }
+    .rcard:hover .rcard-link { color: var(--white); }
+
+    /* ─── OMNIAGENT API CTA ─── */
+    .cta-section {
+      border-top: 1px solid var(--border);
+      padding: 72px var(--gut);
+      background: var(--bg2);
+    }
+    .cta-inner {
+      max-width: 720px; margin: 0 auto;
+    }
+    .cta-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--g2); margin-bottom: 16px;
+    }
+    .cta-text h2 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800; letter-spacing: -0.03em; line-height: 1.07;
+      margin-bottom: 16px;
+    }
+    .cta-text p { font-size: 16px; color: var(--g1); line-height: 1.6; margin-bottom: 28px; }
+    .cta-link {
+      display: inline-flex; align-items: center;
+      background: var(--white); color: #09080f;
+      font-size: 14px; font-weight: 700;
+      padding: 12px 26px; border-radius: 100px;
+      transition: opacity .15s;
+    }
+    .cta-link:hover { opacity: .85; }
+
+    /* ─── NEWSLETTER ─── */
+    .nl-section {
+      border-top: 1px solid var(--border);
+      background: var(--bg2);
+      padding: 44px var(--gut);
+    }
+    .nl-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 40px; flex-wrap: wrap;
+    }
+    .nl-logo img { height: 34px; }
+    .nl-right { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .nl-copy { font-size: 14px; color: var(--g1); max-width: 300px; line-height: 1.55; }
+    .nl-form { display: flex; gap: 8px; }
+    .nl-input {
+      background: var(--bg3); border: 1px solid var(--b2);
+      color: var(--white); font-family: inherit; font-size: 13px;
+      padding: 10px 18px; border-radius: 100px; outline: none; width: 230px;
+      transition: border-color .15s;
+    }
+    .nl-input::placeholder { color: var(--g2); }
+    .nl-input:focus { border-color: rgba(255,255,255,.3); }
+    .nl-submit {
+      background: var(--white); color: #09080f;
+      font-family: inherit; font-size: 13px; font-weight: 700;
+      padding: 10px 20px; border-radius: 100px;
+      cursor: pointer; transition: opacity .15s;
+    }
+    .nl-submit:hover { opacity: .85; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 64px var(--gut) 0;
+      overflow: hidden;
+    }
+    .footer-inner { max-width: var(--max); margin: 0 auto; }
+    .footer-cols {
+      display: grid;
+      grid-template-columns: repeat(4,1fr) 190px;
+      gap: 32px 48px;
+      padding-bottom: 52px;
+      border-bottom: 1px solid var(--border);
+    }
+    .fc h5 {
+      font-size: 11px; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--g2); margin-bottom: 16px;
+    }
+    .fc ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .fc a { font-size: 13px; color: var(--g1); transition: color .15s; line-height: 1.4; }
+    .fc a:hover { color: var(--white); }
+    .fc-apps { display: flex; flex-direction: column; gap: 8px; }
+    .fc-apps a img { width: 128px; }
+    .fc-apps .qr-img { width: 88px; margin-top: 4px; }
+
+    .footer-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 0 30px; flex-wrap: wrap; gap: 16px;
+    }
+    .footer-socials { display: flex; align-items: center; gap: 14px; }
+    .footer-socials a img { width: 17px; height: 17px; object-fit: contain; opacity: .55; transition: opacity .15s; }
+    .footer-socials a:hover img { opacity: 1; }
+    .footer-legal { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .footer-legal span,
+    .footer-legal a { font-size: 12px; color: var(--g2); transition: color .15s; }
+    .footer-legal a:hover { color: var(--g1); }
+    .footer-wm { display: flex; justify-content: center; padding-top: 20px; border-top: 1px solid var(--border); }
+    .footer-wm img { width: 100%; max-width: 600px; opacity: .12; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .nav-left { display: none; }
+      .nav-burger { display: block; }
+      .related-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-cols { grid-template-columns: 1fr 1fr; }
+      .fc-apps { grid-column: span 2; flex-direction: row; flex-wrap: wrap; align-items: center; }
+    }
+    @media (max-width: 600px) {
+      .art-header { padding: 48px 24px 40px; }
+      .art-body { padding: 40px 0 60px; }
+      .related-section { padding: 48px 24px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .nl-inner { flex-direction: column; align-items: flex-start; }
+      .nl-input { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <a href="https://www.napster.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69b2676cfaca4a559c6d5fcc_napster-logo.svg" alt="Napster" />
+    </a>
+    <ul class="nav-left">
+      <li>
+        <button>Napster App
+          <img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69b2676cfaca4a559c6d5fcd_chev-down-small.svg" alt="" />
+        </button>
+      </li>
+      <li>
+        <button>For Business
+          <img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69b2676cfaca4a559c6d5fcd_chev-down-small.svg" alt="" />
+        </button>
+      </li>
+      <li>
+        <button>For Developers
+          <img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69b2676cfaca4a559c6d5fcd_chev-down-small.svg" alt="" />
+        </button>
+      </li>
+    </ul>
+    <ul class="nav-right">
+      <li>
+        <button>Company
+          <img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69b2676cfaca4a559c6d5fcd_chev-down-small.svg" alt="" />
+        </button>
+      </li>
+      <li><a href="https://help.napster.com/hc/en-us">Support</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu">
+      <img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69dc9bb7fffa6e774d60cc2f_hamburger.avif" alt="" />
+    </button>
+  </nav>
+</div>
+
+<!-- ═══ ARTICLE HEADER ═══ -->
+<div class="art-header">
+
+  <!-- "Napster References" chip — exact match to "Napster Blog" pill on blog posts -->
+  <a href="/references" class="post-chip">Napster References</a>
+
+  <div class="art-date">June 2026</div>
+
+  <h1>What Is Agentic AI?</h1>
+
+  <p class="art-subtitle">Explaining what sets agentic AI apart from generalist systems — and why it matters if you're building with it.</p>
+
+</div>
+
+<hr class="art-divider" />
+
+<!-- ═══ ARTICLE BODY — single centered column, no hero image ═══ -->
+<div class="art-body-wrap">
+  <article class="art-body">
+
+    <p>Agentic AI is artificial intelligence that can pursue a goal on its own, without requiring a human to direct every move. Their key differentiator is that agency: Unlike a traditional chatbot, agents can leverage user-approved tools and systems to identify a solution to a problem, decide what steps to take, act on those decisions, and adjust course when things change.</p>
+
+    <p>An agentic AI system doesn't wait for a new prompt to take each next step. It's an end-to-end solution that, when properly implemented and monitored, can free up time for human coworkers and make independent choices that can further improve efficiency.</p>
+
+    <h2>How Agentic AI Works</h2>
+    <p>An agentic AI system runs a continuous loop:</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">01</div>
+        <div class="step-body">
+          <strong>Perceive</strong>
+          <p>The agent takes in information such as a user message, a document, a database query, or even a live conversation, and turns that input into workable material.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <div class="step-body">
+          <strong>Reason</strong>
+          <p>The agent interprets the input in the context of what it was built to do — leveraging its memory of past chats, the instructions it's been given at the system level, and goals stated by the user more broadly.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <div class="step-body">
+          <strong>Plan</strong>
+          <p>The AI decides what to do next and sets an end-to-end strategy — which tools to call, what action to take, and what questions to ask before jumping in.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">04</div>
+        <div class="step-body">
+          <strong>Act</strong>
+          <p>The agent executes by triggering a workflow and generating a response. This could be a web search, reviewing a document, or other workflows to understand the problem and provide a solution.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">05</div>
+        <div class="step-body">
+          <strong>Adapt</strong>
+          <p>Based on the results of its actions, the AI updates its understanding and continues toward the goal.</p>
+        </div>
+      </div>
+    </div>
+
+    <p>This loop runs continuously within a session. In more sophisticated systems, like agents built on the <a href="https://developers.napster.com/docs">Napster Omniagent API</a>, it also carries forward across sessions, so the agent can pick up where it left off with a returning user.</p>
+
+    <h2>What Makes an Agent "Agentic"</h2>
+    <p>Not every AI assistant qualifies. Three things distinguish an agentic system from a standard AI tool:</p>
+
+    <div class="traits">
+      <div class="trait">
+        <strong>Persistent goal orientation</strong>
+        <p>The agent keeps track of an objective across multiple steps, not just a single response.</p>
+      </div>
+      <div class="trait">
+        <strong>Tool use</strong>
+        <p>The agent can take actions — calling an API, querying a database, triggering a system function — rather than just generating text based on its foundational model.</p>
+      </div>
+      <div class="trait">
+        <strong>Adaptive behavior</strong>
+        <p>The agent responds to new information mid-task, rather than following a rigid script.</p>
+      </div>
+    </div>
+
+    <p>A system can have some of these properties without being fully agentic. A simple chatbot that uses a search tool is moving in this direction. An agent that maintains a conversation goal across a phone call, a website visit, and a follow-up email — with memory of all three — is operating at a meaningfully higher level.</p>
+
+    <h2>Agentic AI vs. Generative AI</h2>
+    <p>Generative AI creates content in response to a prompt. The interaction is essentially a one-shot, even when you ask for multiple outputs. It completes the task but doesn't build off of that session in any meaningful way.</p>
+    <p>Agentic AI uses generative capabilities as one component of a larger system. The language model becomes a reasoning engine inside a broader architecture that includes memory, tools, and an ongoing goal. Generation is a means to an end, not the end itself.</p>
+
+    <div class="pullquote">
+      <p>Generative AI answers questions.<br>Agentic AI completes tasks.</p>
+    </div>
+
+    <h2>Agentic AI in Practice</h2>
+    <p>The clearest examples of agentic AI are systems that do something on behalf of a user without the user having to micromanage every step.</p>
+    <p>A hotel concierge agent that handles check-in questions, makes restaurant recommendations, and processes requests is agentic. It holds the goal of helping the guest, uses tools to access reservation systems, and adapts based on what the guest says.</p>
+    <p>A sales agent that qualifies inbound leads over the phone, updates a CRM with the outcome, and routes promising contacts to a human sales rep is agentic. It's doing a job, not answering a question.</p>
+    <p><a href="https://www.napster.com/station">Napster Station</a>, Napster's AI concierge deployed at events and high-traffic venues, runs on this architecture. It engages guests in real-time conversation, uses tools to retrieve venue information, and maintains context across an interaction without human coordination.</p>
+    <p>For developers and product teams, agentic AI represents a shift in what's buildable. The question stops being "what can the model say?" and starts being "what can the agent do?" Agents that work across communication channels, remember users between sessions, connect to real backend systems, and handle complex multi-step interactions are now within reach of any team with access to the right API.</p>
+    <p><strong>Start building: <a href="https://developers.napster.com/docs">Napster Omniagent API →</a></strong></p>
+
+    <!-- Share bar — matches blog post exactly -->
+    <div class="share-row">
+      <span class="share-label">Share article:</span>
+      <div class="share-btns">
+        <a class="share-btn" href="#" title="Copy link">🔗</a>
+        <a class="share-btn" href="#" title="LinkedIn">in</a>
+        <a class="share-btn" href="#" title="X / Twitter">𝕏</a>
+        <a class="share-btn" href="#" title="Facebook">f</a>
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<!-- ═══ "ALSO READ" / RELATED POSTS  (exact blog module) ═══ -->
+<section class="related-section">
+  <div class="related-inner">
+    <div class="related-label">Also Read</div>
+    <h2 class="related-heading"><span class="grad-word">Related</span> posts</h2>
+    <p class="related-sub">Stay up to date with the latest platform updates, feature launches, and important news.</p>
+
+    <div class="related-grid">
+
+      <a class="rcard" href="/references/what-is-an-ai-agent">
+        <div class="rcard-tag">AI Agents</div>
+        <div class="rcard-title">What Is an AI Agent?</div>
+        <div class="rcard-link">Read article ↗</div>
+      </a>
+
+      <a class="rcard" href="/references/what-is-persistent-memory-in-ai">
+        <div class="rcard-tag">Memory &amp; Persistence</div>
+        <div class="rcard-title">What Is Persistent Memory in AI?</div>
+        <div class="rcard-link">Read article ↗</div>
+      </a>
+
+      <a class="rcard" href="/references/agentic-ai-vs-generative-ai">
+        <div class="rcard-tag">Fundamentals</div>
+        <div class="rcard-title">Agentic AI vs. Generative AI</div>
+        <div class="rcard-link">Read article ↗</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OMNIAGENT API CTA ═══ -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <div class="cta-eyebrow">Start building</div>
+      <h2>Explore the<br>Omniagent API.</h2>
+      <p>Deploy AI agents with lifelike voice, video presence, and persistent memory — from $0.01 per minute. Open to developers now.</p>
+      <a href="https://developers.napster.com/docs" class="cta-link">View the docs →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NEWSLETTER ═══ -->
+<div class="nl-section">
+  <div class="nl-inner">
+    <div class="nl-logo">
+      <img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69b003ec258e5c220a21c537_Logo.avif" alt="Napster" />
+    </div>
+    <div class="nl-right">
+      <p class="nl-copy">Subscribe and get 3 free song creations now.</p>
+      <form class="nl-form" onsubmit="return false">
+        <input class="nl-input" type="email" placeholder="Your email" />
+        <button class="nl-submit" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-cols">
+      <div class="fc">
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="https://www.napster.com/consumer">Napster App</a></li>
+          <li><a href="https://www.napster.com/napster-for-mac">Napster for Mac</a></li>
+          <li><a href="https://www.napster.com/view">Napster View</a></li>
+          <li><a href="https://www.napster.com/station">Napster Station</a></li>
+          <li><a href="https://www.napster.com/learn-for-enterprise">Napster Learn: Enterprise</a></li>
+          <li><a href="https://www.napster.com/learn-for-higher-education">Napster Learn: Higher Ed</a></li>
+          <li><a href="https://www.napster.com/spaces">Napster Spaces</a></li>
+          <li><a href="https://www.napster.com/developer">Napster API</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h5>For Business</h5>
+        <ul>
+          <li><a href="https://www.napster.com/small-business">For Small Business</a></li>
+          <li><a href="https://www.napster.com/enterprise">For Enterprise</a></li>
+          <li><a href="https://www.napster.com/developer">For Developers</a></li>
+          <li><a href="https://www.napster.com/partners">For Partners</a></li>
+          <li><a href="https://www.napster.com/pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="https://www.napster.com/news">Newsroom</a></li>
+          <li><a href="https://www.napster.com/about">About</a></li>
+          <li><a href="https://www.napster.com/careers">Careers</a></li>
+          <li><a href="https://ir.napster.com">Investor Relations</a></li>
+          <li><a href="https://www.napster.com/blog">Blog</a></li>
+          <li><a href="https://www.napster.com/contact">Contact Us</a></li>
+          <li><a href="https://trust.napster.com">Trust Center</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="https://www.napster.com/news#mediakit">Media Kit</a></li>
+          <li><a href="https://help.napster.com/hc/en-us">Help Center</a></li>
+          <li><a href="https://www.napster.com/case-studies">Case Studies</a></li>
+          <li><a href="https://docs.napster.com">Documentation</a></li>
+          <li><a href="https://status.napster.com">API Status</a></li>
+        </ul>
+      </div>
+      <div class="fc fc-apps">
+        <a href="https://apps.apple.com/us/app/napster-ai-music-experts/id584557117">
+          <img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69b1135306dd6512a006cdb6_Store%20download%20button.avif" alt="App Store" />
+        </a>
+        <a href="https://companiondesktop.blob.core.windows.net/application/builds/Napster.dmg">
+          <img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69b11341694e9bd68e16868c_Store%20download%20button.avif" alt="Mac" />
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.rhapsody.napster">
+          <img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69b11362422a5f9268c4c252_Store%20download%20button.avif" alt="Google Play" />
+        </a>
+        <img class="qr-img" src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69d9369a70f08b5274568d7f_qrcode-url1.avif" alt="QR" />
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/company/napstercorp/"><img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69aebbdd90c8dabba13b238b_ri_linkedin-fill.png" alt="LinkedIn" /></a>
+        <a href="https://www.youtube.com/@napstercorp"><img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69b3ac3917215cd3868b5ca9_a.png" alt="YouTube" /></a>
+        <a href="https://www.instagram.com/napstercorp/"><img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69aeba543b33182de1a53414_mdi_instagram.png" alt="Instagram" /></a>
+        <a href="https://x.com/napster_corp"><img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69aebc33516eac27a6293122_codicon_twitter.png" alt="X" /></a>
+        <a href="https://www.facebook.com/napstercorp/"><img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69aebbff17794fe4a3a06c54_ri_facebook-fill.png" alt="Facebook" /></a>
+      </div>
+      <div class="footer-legal">
+        <span>© 2026 Napster</span>
+        <a href="https://www.napster.com/terms-of-service">Terms of Service</a>
+        <a href="https://www.napster.com/privacy-policy">Privacy Policy</a>
+        <a href="https://www.napster.com/ethics">AI Principles</a>
+        <a href="#">Accessibility</a>
+        <a href="https://www.napster.com/drafts/cookie-policy">Cookie Policy</a>
+      </div>
+    </div>
+
+    <div class="footer-wm">
+      <img src="https://cdn.prod.website-files.com/69ae6251111a514c4038172a/69aec7622df8100f2fb51f8a_svgviewer-png-output.avif" alt="" />
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
